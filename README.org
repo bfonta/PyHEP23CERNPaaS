@@ -42,7 +42,7 @@ Fork this repository so you can follow the steps below by yourself.
 + Click on "Import from Git" under "Git Repository"
 + Paste the URL of the repository under "Git Repo URL". For this example you can paste ~https://github.com/bfonta/PyHEP23CERNPaaS~ (replacing ~bfonta~ by your username). After pasting it, the repo should appear as "Validated" in green.
 + If you want to deploy a specific branch (~main~ in this demo), you can select "Show advanced Git options" and explore the options available. Here we only have one branch :)
-+ You can now define some labelsunder "Application" and "Name". You can use the defaults if suggested. I have used "pyhep" for "Appication" and "pyhep23" for "Name". The latter will affect the url of your web app.
++ You can now define some labels under "Application" and "Name". I have used "pyhep" for "Appication" and "pyhep23" for "Name", but yo can choose the ones you prefer. The latter will affect the url of your web app.
 + Notice that the port being listened to is 8080, the same specified in ~app.sh~.
 + You now want to set your "Route", i.e., the resource that enables our app to receive traffic coming from outside. Check "Create a route" and under "Show advanced Routing options" make sure that "Secure Route" is checked, "TLS termination" is set to "Edge" and "Insecure traffic" is set to "Redirect".
 + Click on "Create"
