@@ -1,0 +1,60 @@
+
+* Setup
+
+We recommend installing python packages va [[https://mamba.readthedocs.io/en/latest/index.html][mamba]]. For this repository to work locally, please create a new environment as follows:
+
+#+BEGIN_SRC shell
+mamba create -n PyHEP23Demo pandas plotly dash
+mamba activate PyHEP23Demo # or micromamba activate PyHEP23Demo
+# use "mamba install <package>" for including additional packages in the environment
+#+END_SRC
+
+To run the app locally (after cloning this repository):
+
+#+BEGIN_SRC shell
+python script.py
+#+END_SRC
+
+Navigate to the link printed on screen, by default =http://127.0.0.1:8010/=. An interactive pie chart should be acessible.
+
+* Using CERN Platform-as-a-Service (PaaS)
+
+We provide an example of how to deploy a web application using OpenShift via CERN's PaaS. There are three supported ways for doing so:
+
++ directly from a git repository
++ using a Docker image
++ using Helm charts
+
+We cover the first, so-called "Source-to-Image workflow", which is the simplest of the three. The full documentation is available [[https://paas.docs.cern.ch/][here]].
+
+** Repository modifications
+
+In order to deploy a web app directly from a git repository, some files have to be added. In its most basic form, we need to specify which packages should be included (~requirements.txt~, which mimicks what has to be done to run the code locally, see "Setup") and how the application is run (~app.sh~). These and other configuration options are detailed [[https://github.com/kubesphere/s2i-python-container/tree/master/3.8][here]].
+
+** Step-by-step instructions
+
+Fork this repository so you can follow the steps below by yourself.
+
++ Navigate to https://paas.cern.ch/
++ On the left side pane, click on "+Add"
++ Click on "Import from Git" under "Git Repository"
++ Paste the URL of the repository under "Git Repo URL". For this example you can paste ~https://github.com/bfonta/PyHEP23CERNPaaS~ (replacing ~bfonta~ by your username). After pasting it, the repo should appear as "Validated" in green.
++ If you want to deploy a specific branch (~main~ in this demo), you can select "Show advanced Git options" and explore the options available. Here we only have one branch :)
++ You can now define some labelsunder "Application" and "Name". You can use the defaults if suggested. I have used "pyhep" for "Appication" and "pyhep23" for "Name". The latter will affect the url of your web app.
++ Notice that the port being listened to is 8080, the same specified in ~app.sh~.
++ You now want to set your "Route", i.e., the resource that enables our app to receive traffic coming from outside. Check "Create a route" and under "Show advanced Routing options" make sure that "Secure Route" is checked, "TLS termination" is set to "Edge" and "Insecure traffic" is set to "Redirect".
++ Click on "Create"
++ You will be taken to a menu listing all apps you have tried to deployed in the past. If this is your first time trying, the menu will show one app.
++ If you want the app to be visible outside the CERN network, you need to follow [[https://paas.docs.cern.ch/5._Exposing_The_Application/2-network-visibility/][these steps]]. Here I want this app to be visible to the Internet. In short:
+  + in the OKD page, on the top left corner, select the "Administrator" view instead of "Developer"
+  + under "Networking", select "Routes"
+  + select the three-dots menu of the application you've just created, and click on "Edit Annotations"
+  + Replace the value of key "haproxy.router.openshift.io/ip_whitelist" by an empty string (deleting it will not work)
++ Back in the "Developer" view, select the app, and navigate to its URL (right pane)
++ Enjoy your app!
+
+** Caveats
+
++ If your repository is not public, follow [[https://paas.docs.cern.ch/2._Deploy_Applications/Deploy_From_Git_Repository/2-deploy-s2i-app/#allow-openshift-to-access-a-protected-git-repository][these additional instructions]].
++ If authentication is important for you, follow [[https://paas.docs.cern.ch/4._CERN_Authentication/1-use-cern-sso/][these instructions]].
++ To access storage from the web app, see for instance [[https://paas.docs.cern.ch/3._Storage/eos/][this]] for the EOS service. Other options are available.
