@@ -1,4 +1,6 @@
 
+The demo is running [[https://pyhep23-hgcal-event-display.app.cern.ch/][here]].
+
 * Setup
 
 We recommend installing python packages va [[https://mamba.readthedocs.io/en/latest/index.html][mamba]]. For this repository to work locally, please create a new environment as follows:
