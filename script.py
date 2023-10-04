@@ -25,5 +25,5 @@ app.layout = html.Div(
      dcc.Graph(id='graph', figure=example(), style={'width': '90vh', 'height': '90vh'}),])
 
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8010)
+    app.run_server(debug=True, host="0.0.0.0", port=8080)
     
