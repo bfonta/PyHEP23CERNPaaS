@@ -15,21 +15,21 @@ To run the app locally (after cloning this repository):
 python script.py
 #+END_SRC
 
-Navigate to the link printed on screen, by default =http://127.0.0.1:8010/=. An interactive pie chart should be acessible.
+Navigate to the link printed on screen, by default =http://127.0.0.1:8010/=. An interactive pie chart should be accessible.
 
 * Using CERN Platform-as-a-Service (PaaS)
 
 We provide an example of how to deploy a web application using OpenShift via CERN's PaaS. There are three supported ways for doing so:
 
 + directly from a git repository
-+ using a Docker image
-+ using Helm charts
++ using a [[https://www.docker.com/][Docker]] image
++ using [[https://helm.sh/docs/topics/charts/][Helm charts]]
 
 We cover the first, so-called "Source-to-Image workflow", which is the simplest of the three. The full documentation is available [[https://paas.docs.cern.ch/][here]].
 
 ** Repository modifications
 
-In order to deploy a web app directly from a git repository, some files have to be added. In its most basic form, we need to specify which packages should be included (~requirements.txt~, which mimicks what has to be done to run the code locally, see "Setup") and how the application is run (~app.sh~). These and other configuration options are detailed [[https://github.com/kubesphere/s2i-python-container/tree/master/3.8][here]].
+In order to deploy a web app directly from a git repository, some files have to be added. In its most basic form, we need to specify which packages should be included (~requirements.txt)~, which mimics what has to be done to run the code locally, see "Setup") and how the application is run (~app.sh~). These and other configuration options are detailed [[https://github.com/kubesphere/s2i-python-container/tree/master/3.8][here]].
 
 ** Step-by-step instructions
 

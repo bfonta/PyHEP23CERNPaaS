@@ -3,10 +3,13 @@
 import plotly.express as px
 import numpy as np
 import dash
-#import dash_html_components as html
 from dash import dcc, html
 
 def example():
+    """
+    This created a plotly figure.
+    Outside an app it can be displayed using fig.show().
+    """
     df = px.data.gapminder().query("year == 2007")
     fig = px.sunburst(df, path=['continent', 'country'], values='pop',
                       color='lifeExp', hover_data=['iso_alpha'],
