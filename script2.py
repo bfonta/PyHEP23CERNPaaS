@@ -1,4 +1,3 @@
-# source: adapted from https://plotly.com/python/animations/
 
 import plotly.graph_objects as go
 import pandas as pd
@@ -7,8 +6,8 @@ from dash import dcc, html
 
 def figure1():
     """
-    This created a plotly figure.
-    Outside an app it can be displayed using fig.show().
+    This created a plotly figure. Outside an app it can be displayed using fig.show().
+    Adapted from https://pyhep23-hgcal-event-display.app.cern.ch/
     """
     url = "https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv"
     dataset = pd.read_csv(url)
@@ -141,7 +140,10 @@ def figure1():
     return fig
 
 def figure2():
-    """Taken from https://plotly.com/python/range-slider/"""
+    """
+    This created a plotly figure. Outside an app it can be displayed using fig.show().
+    Adapted from https://plotly.com/python/range-slider/
+    """
     df = pd.read_csv(
         "https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
     df.columns = [col.replace("AAPL.", "") for col in df.columns]
