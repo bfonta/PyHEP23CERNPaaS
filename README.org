@@ -17,7 +17,7 @@ To run the app locally (after cloning this repository):
 python script.py
 #+END_SRC
 
-Navigate to the link printed on screen, by default =http://0.0.0.0:8080/=. An interactive pie chart should be accessible.
+Navigate to the link printed on screen, by default =http://0.0.0.0:8080/=. A set of two interactive plots should be accessible.
 
 * Using CERN Platform-as-a-Service (PaaS)
 
