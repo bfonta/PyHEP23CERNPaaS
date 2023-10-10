@@ -3,21 +3,22 @@ The demo is running [[https://pyhep23-hgcal-event-display.app.cern.ch/][here]].
 
 * Setup
 
-We recommend installing python packages va [[https://mamba.readthedocs.io/en/latest/index.html][mamba]]. For this repository to work locally, please create a new environment as follows:
+We recommend installing python packages with [[https://mamba.readthedocs.io/en/latest/index.html][mamba]]. For this repository to work locally, please create a new environment as follows:
 
 #+BEGIN_SRC shell
 mamba create -n PyHEP23Demo pandas plotly dash
-mamba activate PyHEP23Demo # or micromamba activate PyHEP23Demo
+mamba activate PyHEP23Demo
 # use "mamba install <package>" for including additional packages in the environment
 #+END_SRC
 
-To run the app locally (after cloning this repository):
+To run the app locally (after cloning this repository), run one of the following:
 
 #+BEGIN_SRC shell
 python script.py
+python script2.py
 #+END_SRC
 
-Navigate to the link printed on screen, by default =http://0.0.0.0:8080/=. A set of two interactive plots should be accessible.
+Navigate to the link printed on screen, by default =http://0.0.0.0:8080/=. A set of one (=script.py=) or two (=script2.py=) interactive plots should be accessible.
 
 * Using CERN Platform-as-a-Service (PaaS)
 
