@@ -195,8 +195,8 @@ app.title = "PyHEP23"
 
 app.layout = html.Div(
     [html.H2("PyHEP 2023 Demo"),
-     dcc.Graph(id='graph', figure=figure1(), style={'width': '90vh', 'height': '90vh', 'display': 'inline-block'}),
-     dcc.Graph(id='graph', figure=figure2(), style={'width': '90vh', 'height': '90vh', 'display': 'inline-block'})])
+     dcc.Graph(id='graph1', figure=figure1(), style={'width': '90vh', 'height': '90vh', 'display': 'inline-block'}),
+     dcc.Graph(id='graph2', figure=figure2(), style={'width': '90vh', 'height': '90vh', 'display': 'inline-block'})])
 
 if __name__ == '__main__':
     app.run_server(debug=True, host="0.0.0.0", port=8080)
