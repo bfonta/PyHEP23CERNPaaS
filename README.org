@@ -1,4 +1,6 @@
-Demonstration on how to use CERN PaaS / OpenShift to deploy a web application written in Python. The demo is running [[https://pyhep23-hgcal-event-display.app.cern.ch/][here]].
+[[https://doi.org/10.5281/zenodo.10001296][https://zenodo.org/badge/DOI/10.5281/zenodo.10001296.svg]]
+
+Demonstration on how to use CERN PaaS / OpenShift to deploy a web application written in Python. The demo is running [[https://pyhep23-hgcal-event-display.app.cern.ch/][here]]. The presentation slides can be found [[https://indico.cern.ch/event/1252095/contributions/5593563/][here]].
 
 * Setup
 
